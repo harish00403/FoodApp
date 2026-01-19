@@ -1,0 +1,214 @@
+.header{
+    margin: 30px auto;
+    background: url('/public/background\ img.png') no-repeat center;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    min-height: 420px;
+    height: 34vw;
+    max-height: 600px;
+    overflow: hidden;
+}
+.header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.55);  /* ✅ transparent white */
+    /* or use black: rgba(0,0,0,0.35) */
+    z-index: 1;
+}
+
+
+
+/* ================= CONTENT ================= */
+
+.header-contents{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 45%;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    animation: fadeIn 1.5s;
+}
+
+
+.header-contents h2{
+    font-weight: 500;
+    color: rgb(16,16,16);
+    font-size: clamp(26px, 3.5vw, 54px);
+}
+
+.header-contents p{
+    font-size: clamp(13px, 1.2vw, 16px);
+    margin: 0;                /* 🔥 remove big margins */
+    color: rgb(228, 18, 18);
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+.header-contents button{
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 12px 28px;
+    background-color: white;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.header-contents button:hover{
+    background-color: #f0f0f0;
+    color: black;
+}
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large screens */
+@media (max-width:1500px) {
+    .header-contents{
+        max-width: 45%;
+    }
+}
+
+/* Tablets */
+@media (max-width:900px) {
+    .header{
+        margin-left: 0;
+        height: 60vw;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header-contents{
+        max-width: 60%;
+        bottom: 12%;
+        left: 5%;
+    }
+
+    .header-contents h2{
+        font-size: max(5vw, 20px);
+    }
+
+    .header-contents p{
+        font-size: 14px;
+    }
+
+    .header-contents button{
+        padding: 2vw 4vw;
+        font-size: 14px;
+    }
+}
+
+/* ================= MOBILE HERO ================= */
+
+@media (max-width:750px) {
+
+  .header{
+      min-height: 380px;
+      height: 70vh;              /* 🔥 better than vw on mobile */
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      border-radius: 18px;
+      overflow: hidden;
+  }
+
+  .header-contents{
+      position: relative;
+      max-width: 92%;
+      text-align: center;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 14px;
+      border-radius: 16px;
+  }
+
+  .header-contents h2{
+      font-size: 6.2vw;        /* 🔥 controlled */
+      line-height: 1.25;
+      margin: 0;
+  }
+
+  .header-contents p{
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
+      margin: 0;
+      opacity: 0.9;
+  }
+
+  .header-contents button{
+      margin-top: 6px;
+      padding: 10px 22px;
+      font-size: 14px;
+      border-radius: 30px;
+  }
+}
+
+/* ultra wide screen */
+@media (min-width:1800px){
+    .header{
+        height: 28vw;          
+        margin-left: 0;
+        background-size: cover;
+    }
+
+    .header-contents{
+        max-width: 40%;
+        gap: 14px;
+    }
+
+    .header-contents h2{
+        font-size: 3.2vw;
+    }
+
+    .header-contents p{
+        font-size: 1.1vw;
+    }
+
+    .header-contents button{
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+}
+/* only for 945px → 1799px */
+@media (min-width:945px) and (max-width:1799px){
+    .header{
+        height: 30vw;
+        min-height: 420px;
+    }
+
+    .header-contents{
+        max-width: 42%;
+        left: 5%;
+    }
+
+    .header-contents h2{
+        font-size: clamp(28px, 3vw, 46px);
+    }
+
+    .header-contents p{
+        font-size: 14px;
+    }
+}
+

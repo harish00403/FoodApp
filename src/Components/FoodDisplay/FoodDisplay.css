@@ -1,0 +1,99 @@
+.food-display{
+    margin-top: 30px;
+}
+
+/* Section title */
+.food-display h2{
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+}
+
+/* Food list layout */
+.food-display-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large screens */
+@media (max-width:1500px){
+    .food-display-list{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        row-gap: 40px;
+    }
+
+    .food-display h2{
+        font-size: max(2.3vw, 22px);
+    }
+}
+
+/* Tablets */
+@media (max-width:900px){
+    .food-display{
+        margin-top: 20px;
+    }
+
+    .food-display-list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        row-gap: 35px;
+    }
+
+    .food-display h2{
+        text-align: center;
+        font-size: 22px;
+    }
+}
+
+/* ================= MOBILE SWIGGY STYLE ================= */
+
+@media (max-width:750px){
+    .food-display{
+        margin-top: 15px;
+    }
+
+    .food-display h2{
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .food-display-list{
+        display: flex;                 /* change grid to row scroll */
+        overflow-x: auto;
+        gap: 16px;
+        padding: 10px 4px 15px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .food-display-list::-webkit-scrollbar{
+        display: none;
+    }
+
+    /* each FoodItem root div */
+    .food-display-list > *{
+        min-width: 260px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+}
+/* ultra wide screen */
+@media (min-width:1800px){
+    .food-display{
+        margin-top: 20px;
+    }
+
+    .food-display-list{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+        row-gap: 35px;
+    }
+
+    .food-display h2{
+        font-size: 26px;
+    }
+}
