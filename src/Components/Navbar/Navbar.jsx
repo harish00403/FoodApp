@@ -20,7 +20,7 @@ export const Navbar = ({ setShowLogin }) => {
           <Link to='/' 
             onClick={() => setMenu("Home")} 
             className={menu === "Home" ? "active" : ""}>
-            Home
+            santhosh
           </Link>
         </li>
 
